@@ -8,8 +8,8 @@ def call(String credId, String imageName){
         ]) {
 
             sh "docker login -u ${dockerHubUser} -p ${dockerHubPass}"
-            sh "docker image tag two-tier-flask-app ${dockerHubUser}/two-tier-flask-app"
-            sh "docker push ${dockerHubUser}/two-tier-flask-app"
+            sh "docker image tag $imageName} ${dockerHubUser}/${imageName}"
+            sh "docker push ${dockerHubUser}/${imageName}"
             echo "Uploaded to Docker Hub"
 
         }  
